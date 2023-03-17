@@ -7,6 +7,9 @@ export class User {
     userId: string;
 
     @Column({ unique: true })
+    passwordHash: string;
+
+    @Column({ unique: true })
     username: string;
 
     @Column({ default: false })
@@ -15,9 +18,6 @@ export class User {
     @Column({ default: false })
     isAdmin: boolean;
 
-    @Column()
-    numHits: number;
-
     @OneToMany(() => Link, (link) => link.user, { cascade: ['insert', 'update'] })
-    user: Relation<Link[]>;
+    links: Relation<Link[]>;
 }

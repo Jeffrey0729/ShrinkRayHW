@@ -12,9 +12,9 @@ export class Link {
     @Column()
     lastAccessedOn: string;
 
-    @Column()
+    @Column({ default: 0 })
     numHits: number;
 
     @ManyToOne(() => User, (user) => user.links, { cascade: ['insert', 'update'] })
-    links: Relation<User[]>;
+    user: Relation<User>;
 }
