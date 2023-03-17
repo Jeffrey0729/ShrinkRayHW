@@ -9,8 +9,11 @@ export class User {
     @Column({ unique: true })
     username: string;
 
-    @Column({ default: false})
+    @Column({ default: false })
     isPro: boolean;
+
+    @Column({ default: false })
+    isAdmin: boolean;
 
     @Column()
     numHits: number;
