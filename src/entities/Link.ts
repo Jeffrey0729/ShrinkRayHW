@@ -3,18 +3,18 @@ import { User } from './User';
 
 @Entity()
 export class Link {
-    @PrimaryColumn('uuid')
-    linkId: string;
+  @PrimaryColumn()
+  linkId: string;
 
-    @Column()
-    originalUrl: string;
+  @Column()
+  originalUrl: string;
 
-    @Column()
-    lastAccessedOn: string;
+  @Column()
+  lastAccessedOn: Date;
 
-    @Column({ default: 0 })
-    numHits: number;
+  @Column({ default: 0 })
+  numHits: number;
 
-    @ManyToOne(() => User, (user) => user.links, { cascade: ['insert', 'update'] })
-    user: Relation<User>;
+  @ManyToOne(() => User, (user) => user.links)
+  user: Relation<User>;
 }
