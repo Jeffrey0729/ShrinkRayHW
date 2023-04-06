@@ -18,7 +18,7 @@ async function registerUser(req: Request, res: Response): Promise<void> {
     const newUser = await addNewUser(username, passwordHash);
 
     res.status(201).json(newUser);
-    res.redirect('/path/to/resource');
+    res.redirect('/login');
   } catch (err) {
     console.error(err);
     const databaseErrorMessage = parseDatabaseError(err);
@@ -50,7 +50,7 @@ async function logIn(req: Request, res: Response): Promise<void> {
   };
   req.session.isLoggedIn = true;
 
-  res.redirect('/path/to/resource');
+  res.redirect('/links');
 }
 
 export { registerUser, logIn };

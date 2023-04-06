@@ -34,9 +34,8 @@ app.post('/api/login', logIn); // Log in to an account
 
 app.post('/api/links', shortenUrl); // Shorten URL
 app.get('/:targetLinkId', visitLink); // Visit a URL
-app.get('/api/users/:targetUserId/links', getLinks);
+app.get('/api/users/:targetUserId/links', getLinks); // Get all User links
 app.delete('/api/users/:targetUserId/links/:targetLinkId', removeLink); // Delete a URL
-// app.get();
 
 app.listen(PORT, () => {
   console.log(`Listening at http://localhost:${PORT}`);
