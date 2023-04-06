@@ -13,8 +13,7 @@ import { getUserById } from '../models/UserModel';
 
 async function shortenUrl(req: Request, res: Response): Promise<void> {
   if (!req.session.isLoggedIn) {
-    res.sendStatus(403);
-    return;
+    res.redirect('/path/to/resource');
   }
 
   // Get the userId from `req.session`

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shrink a Link | Shrink Ray</title>
+  <meta name="description" content="Shrink Ray is a free URL shortening service. Create custom short links for your long URLs and track them in real time.">
+  <meta name="keywords" content="URL shortener, link shortener, short link, link shrinker">
+  <meta name="author" content="Your Name">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="formCard">
+    <section class="form-container">
+      <div>
+        <h1 class="title gradient-text">Shrink Ray</h1>
+        <h2>Shrink a Link</h2>
+      </div>
+      <div class="form">
+        <form method="POST" action="/api/links">
+          <label for="originalUrl">Original URL</label>
+          <input name="originalUrl" id="originalUrl" class="originalUrl" type="url" placeholder="Original URL" required>
+          <button class="btn">Shrink It!</button>
+        </form>
+      </div>
+    </section>
+  </div>
+  <script src="scripts.js"></script>
+</body>
+</html>
