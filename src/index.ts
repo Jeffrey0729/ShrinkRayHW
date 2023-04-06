@@ -26,13 +26,17 @@ app.use(
 
 app.use(express.json());
 
+app.use(express.static('public', { extensions: ['html'] }));
+app.use(express.urlencoded({ extended: false }));
+
 app.post('/api/users', registerUser); // Create an account
 app.post('/api/login', logIn); // Log in to an account
 
-app.post('/api/links', shortenUrl);
-app.get('/:targetLinkId', visitLink);
+app.post('/api/links', shortenUrl); // Shorten URL
+app.get('/:targetLinkId', visitLink); // Visit a URL
 app.get('/api/users/:targetUserId/links', getLinks);
-app.delete('/api/users/:targetUserId/links/:targetLinkId', removeLink);
+app.delete('/api/users/:targetUserId/links/:targetLinkId', removeLink); // Delete a URL
+// app.get();
 
 app.listen(PORT, () => {
   console.log(`Listening at http://localhost:${PORT}`);
